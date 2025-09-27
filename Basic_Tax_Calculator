@@ -1,0 +1,31 @@
+#BASIC TAX CALCULATOR, first thing ever built in python
+#Built using Google Colab
+
+#a will be the total gross income
+a = float(input("Please Enter Your Expected Yearly Salary: "))
+if ((20/100)*a <= 8400): #if statement used to seperate tax brackets
+    b = ((20/100)*a)
+else:
+    b = 8400
+
+#if somebody makes over 42000 they automatically go into the 40% bracket for earnings above that amount
+a2 = (a - 42000)
+
+#if used here to seperate those above and below the 40% cut off
+if (40/100)*a2 <= 0:
+    c = 0
+else:
+    c = ((40/100)*a2)      #a2 is the remaining money after the 20% cut off
+
+#tt is total tax
+tt = float(b+c)
+#ti is total income / gross income
+ti = float(a - tt)
+
+#full breakdown of the numbers
+print ("Gross Salary", a)
+print ("Tax Paid At 20%:", b)
+print ("Tax Paid At 40%:", c)
+print ("Total Tax Paid:", tt)
+print ("Total Income:", ti)
+print ("Income Per Month:", ti / 12)
